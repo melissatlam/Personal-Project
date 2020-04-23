@@ -16,7 +16,8 @@ module.exports = {
 
         //hash password, create the user
         let salt = bcrypt.genSaltSync(10);
-        let hash = bcrypt.hashSync(password, salt);
+        console.log(salt); //shows the unique string attached to password
+        let hash = bcrypt.hashSync(password, salt); //hashsync = mix the pw and salt, can't reverse engineer the hash
         const newUser = await db.users.register_user(username, email, hash, picture);
 
         //place the user on a session, send that client-side
@@ -35,10 +36,16 @@ module.exports = {
         }
 
         //check password against the hash in the db
-        const authenticated = bcrypt.compareSync(password, foundUser[0].password);
+        const authenticated = bcrypt.compareSync(password, foundUser[0].password); //foundUser[0].password bcrypt 
         if(!authenticated){
             return res.status(401).send('Password is incorrect');
         }
+
+        //CHANGE PW = const authenticated = bcrypt.compareSync(password, foundUser[0].password); 
+        // let salt = bcrypt.genSaltSync(10);
+        // console.log(salt); //shows the unique string attached to password
+        // let hash = bcrypt.hashSync(password, salt); //hashsync = mix the pw and salt, can't reverse engineer the hash
+        //THEN update table
 
         //place user on a session, send session client-side
         delete foundUser[0].password;

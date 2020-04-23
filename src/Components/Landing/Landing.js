@@ -1,29 +1,3 @@
-// import React, {Component} from 'react';
-// import './Landing.css';
-// import axios from 'axios';
-// //connect needs to be brought into components that are subscribing to values from 
-// //redux.
-// // import {connect} from 'react-redux';
-// // //actions need to be brought into components that are subscribing to them.
-// // import {getUser} from '../../redux/reducer';
-
-
-
-//  class Landing extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 <h1>landing</h1>
-//             </div>
-//         )
-//     }
-// }
-
-// export default Landing
-
-//Landing pages are the first page your users will see. In the case of many 
-//websites, the landing page is an authentication page. Below includes authentication
-//functions for logging in and creating an account.
 import React, {Component} from 'react';
 import './Landing.css';
 import axios from 'axios';
@@ -141,7 +115,7 @@ class Landing extends Component {
                        </>)
                     : (<>
                         <button onClick={this.handleLogin}>Login</button>
-                        <button onClick={this.handleLogoutClick}>Logout</button>
+                       
                         <p>Don't have an account? <span onClick={this.handleToggle}>Register Here</span></p>
                        </>)}
                 </section>

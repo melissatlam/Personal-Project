@@ -13,7 +13,8 @@ const express = require('express'),
       app = express();
 
 app.use(express.json());
-
+//Express-session is implemented as top-level-middleware, so that it will be 
+//invoked before the handler function of any request.
 app.use(session({
     resave: false,
     saveUninitialized: true,
@@ -21,6 +22,8 @@ app.use(session({
     cookie: {maxAge: 1000 * 60 * 60 * 24}
 }));
 
+//Recently massive updated, so passing a connection string is now done like below.
+//Remember to NOT include ?ssl=true to your connection string in you .env.
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {rejectUnauthorized: false}
@@ -35,11 +38,13 @@ app.post('/auth/login', authCtrl.login);
 app.get('/auth/logout', authCtrl.logout);
 
 //post endpoints
-// app.post('/api/post', mainCtrl.createPost);
-// app.get('/api/posts/:id', mainCtrl.getUserPosts);
-// app.delete('/api/post/:id', mainCtrl.deletePost);
+app.post('/api/post', mainCtrl.createPost);
+app.get('/api/posts/:id', mainCtrl.getUserPosts);
+app.delete('/api/post/:id', mainCtrl.deletePost);
 
 //user endpoints
 app.put('/api/user/:id', mainCtrl.updateUsername);
 
-app.listen(port, () => console.log(`Server Listening on port ${port}`));
+
+
+app.listen(port, () => console.log(`Server running on port ${port}`));

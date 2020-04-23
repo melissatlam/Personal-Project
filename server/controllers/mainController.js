@@ -1,3 +1,6 @@
+const {SECRET_KEY} = process.env,
+    Stripe = require('Stripe') (SECRET_KEY);
+
 module.exports = {
     //When building handler functions, make sure to consider:
     //1. What information does this handler function need to work properly?
@@ -35,5 +38,21 @@ module.exports = {
         db.users.update_username(username, id)
         .then(user => res.status(200).send(user))
         .catch(err => console.log(err));
+    },
+
+    completePayments: (req,res) => {
+        const {token,amount} = req.body;
+        const charge = Stripe.charges.create({
+            amount,
+            currency: 'usd',
+            source: token.id,
+            description: 'test charge'
+        },function(err,charge){
+            if(err){
+                return res.sendStatus(500);
+            }
+            res.sendStatus(200);
+            
+        })
     }
 }

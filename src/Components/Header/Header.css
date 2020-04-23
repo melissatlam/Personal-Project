@@ -1,24 +1,35 @@
 .header-container {
-    height: 100px;
+    height: 125px;
     background-color: #101092de;
     color: white;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0px 30px;
-
-  
+    /* margin-top:0px; */
+    
+   
 }
 
+h1{
+    display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   padding-left:20px;
+   padding-top:35px;
+   margin-top:0px;
+   
+}
 .flex {
-    display: flex;   
-    /* flex-direction: column; */
-    justify-content: 
+    display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   box-sizing: border-box;
+   padding-right:20px;
 }
 
 .nav-links{
     
-    background-color: #f1f1f5;
+    background-color: #101092de;
+    color: white;
+    
+    
     
 
 }

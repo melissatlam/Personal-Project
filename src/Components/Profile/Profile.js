@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Profile.css';
 import axios from 'axios';
 import {connect} from 'react-redux';
-// import {getUser, clearUser} from '../../redux/reducer';
+import {getUser, clearUser} from '../../redux/reducer';
 
 class Profile extends Component {
     constructor(props){
@@ -13,20 +13,20 @@ class Profile extends Component {
         }
     }
 
-    //This functionality will route an un-logged in user to the landing page.
-    // componentDidMount(){
-    //     if(!this.props.user.email){
-    //         this.props.history.push('/');
-    //     }
-    // }
+    // This functionality will route an un-logged in user to the landing page.
+    componentDidMount(){
+        if(!this.props.user.email){
+            this.props.history.push('/');
+        }
+    }
 
-    // handleInput = (val) => {
-    //     this.setState({username: val})
-    // }
+    handleInput = (val) => {
+        this.setState({username: val})
+    }
 
-    // handleEditView = () => {
-    //     this.setState({editView: !this.state.editView})
-    // }
+    handleEditView = () => {
+        this.setState({editView: !this.state.editView})
+    }
 
     //Logging out should clear the user data from the backend(through the endpoint
     // below) and wherever it resides in the client-side(redux in this application).
@@ -43,22 +43,22 @@ class Profile extends Component {
     //     .catch(err => console.log(err));
     // }
 
-    // updateUsername = () => {
-    //     const {username} = this.state;
-    //     axios.put(`/api/user/${this.props.user.user_id}`, {username})
-    //     .then(res => {
-    //         this.props.getUser(res.data[0]);
-    //         this.handleEditView();
-    //         this.setState({username: ''});
-    //     })
-    //     .catch(err => console.log(err));
-    // }
+    updateUsername = () => {
+        const {username} = this.state;
+        axios.put(`/api/user/${this.props.user.user_id}`, {username})
+        .then(res => {
+            this.props.getUser(res.data[0]);
+            this.handleEditView();
+            this.setState({username: ''});
+        })
+        .catch(err => console.log(err));
+    }
 
     render(){
         return (
             <div className='profile'>
                 <h1>Your Profile</h1>
-                {/* <img 
+                <img 
                     className='profile-picture'
                     src={this.props.user.profile_picture}
                     alt={this.props.user.username}/>
@@ -72,13 +72,12 @@ class Profile extends Component {
                     <button id='edit-button' onClick={this.updateUsername}>Submit</button>
                    </div>)}
                 <h2>{this.props.user.email}</h2>
-                <button onClick={this.handleLogout}>Logout</button> */}
+                {/* <button onClick={this.handleLogout}>Logout</button>  */}
             </div>
         )
     }
 }
 
-// const mapStateToProps = reduxState => reduxState;
+const mapStateToProps = reduxState => reduxState;
 
-// export default connect(mapStateToProps, {getUser, clearUser})(Profile);
-export default Profile
+export default connect(mapStateToProps, {getUser, clearUser})(Profile);

@@ -5,6 +5,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Profile from './Components/Profile/Profile';
 import Interviews from './Components/Interviews/Interviews';
 import Feedback from './Components/Feedback/Feedback';
+import Logout from './Components/Logout/Logout';
 
 export default (
     <Switch>
@@ -13,6 +14,7 @@ export default (
         <Route path='/interviews' component={Interviews} />
         <Route path='/profile' component={Profile} />
         <Route path='/feedback' component={Feedback} />
+        <Route path='/logout' component={Logout} />
 
     </Switch>
 )
