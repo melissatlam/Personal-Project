@@ -12,25 +12,29 @@ create table if not exists post (
     post_url text
 );
 
-create table recruiters {
-    user_id serial primary key,
+create table recruiters (
+    recruiter_id serial primary key,
     firstname varchar(50),
     lastname varchar(50),
     current_employer varchar(50),
     previous_employers varchar(50),
     years_experience integer,
-    rate integer,
+    rate varchar(10),
+    photo varchar(100)
 
-}
+)
 
-create table recruiter calendars {
-    user_id serial primary key,
+create table recruiter_calendars (
+    recruiter_calendar_id serial primary key,
     day_available date,
-    time_available time
-    -- recruiter_id
-    -- user_id
-}
+    time_available time,
+    recruiter_id integer references recruiters(recruiter_id), 
+    users integer references users(user_id)
+)
 
 create table transactions {
-    
+
 }
+
+
+-- update recruiters set photo = 'https://vignette.wikia.nocookie.net/sonic-pokemon-unipedia/images/1/11/9-1.png/revision/latest?cb=20131031034908' where recruiter_id = 6;

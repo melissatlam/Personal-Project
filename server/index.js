@@ -8,6 +8,7 @@ const express = require('express'),
       session = require('express-session'),
       authCtrl = require('./controllers/authController'),
       mainCtrl = require('./controllers/mainController'),
+      recruiterCtrl = require('./controllers/recruiterController'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       port = SERVER_PORT,
       app = express();
@@ -45,6 +46,10 @@ app.delete('/api/post/:id', mainCtrl.deletePost);
 //user endpoints
 app.put('/api/user/:id', mainCtrl.updateUsername);
 
+//recruiter endpoints
+app.post('/api/recruiters', recruiterCtrl.createRecruiters);
+app.get('/api/recruiters', recruiterCtrl.getRecruiters);
+app.get('/api/recruiters/:id', recruiterCtrl.getCalendars);
 
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

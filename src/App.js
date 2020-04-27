@@ -6,18 +6,6 @@ import routes from './routes';
 import './App.css';
 import axios from 'axios';
 
-// function App() {
-//     return (
-//         <div className="App">
-//             <Header/>
-            
-//             {routes}
-            
-//         </div>
-//     )
-// }
-
-// export default App;
 
 
 class App extends Component {
@@ -50,3 +38,16 @@ class App extends Component {
     }
 
     export default App;
+
+    // function App() {
+//     return (
+//         <div className="App">
+//             <Header/>
+            
+//             {routes}
+            
+//         </div>
+//     )
+// }
+
+// export default App;
