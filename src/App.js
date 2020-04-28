@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import StripeCheckout from 'react-stripe-checkout';
-import Stripe from './Components/Stripe/Stripe';
 import Header from './Components/Header/Header';
 import routes from './routes';
 import './App.css';
 import axios from 'axios';
+import './App.scss';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -40,10 +41,3 @@ class App extends Component {
     export default App;
 
 
-    // <StripeCheckout
-    //             label='Proceed to Checkout'
-    //             token={this.onToken}
-    //             stripeKey={Stripe.publicKey}
-    //             amount={100}
-    //             //billingAddress={true}
-    //             />

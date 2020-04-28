@@ -8,7 +8,7 @@ export class Feedback extends Component {
     render() {
         return (
             <div>
-                <h1>feedback</h1>
+                <h1>My Feedback</h1>
             </div>
         )
     }

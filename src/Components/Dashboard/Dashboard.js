@@ -11,11 +11,10 @@ class Dashboard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            allRecruiters:[]
+            allRecruiters:[],
+            // allCalendars:[]
         }
     }
-    
-
     componentDidMount(){
         
         this.getRecruiters()
@@ -38,8 +37,8 @@ class Dashboard extends Component {
             
     }
     getCalendars= () => {
-        axios.get(`/api/recruiters/:id`)
-        .then(res => this.setState({allRecruiters: res.data}))
+        axios.get('/api/calendar')
+        .then(res => this.setState({allCalendars: res.data}))
         .catch(err => console.log(err));
     }
 
@@ -47,12 +46,16 @@ class Dashboard extends Component {
         const mappedRecruiters = this.state.allRecruiters.map((recruiters) => (
             
                 <div>
-                   <div> Name: {recruiters.firstname}
-                    { recruiters.lastname}</div>
+                   <div> Name: {recruiters.firstname}{recruiters.lastname}</div>
+                    <div> Experience: {recruiters.years_experience} years</div>
                    <div> Current Employer: {recruiters.current_employer}</div>
                    <div> Previous Employers: {recruiters.previous_employers}</div>
-                   <div> Years Experience: {recruiters.years_experience}</div>
+                   
+                   <div>Availability: {recruiters.day_available} at {recruiters.time_available}</div>
                    <div> <img src = {recruiters.photo} alt = "photos" width ='200'></img></div>
+                   
+                   
+                   
                    <div><StripeCheckout
                 label='Proceed to Checkout'
                 token={this.onToken}
@@ -63,6 +66,9 @@ class Dashboard extends Component {
                    </div>
             
         ))
+
+        
+
         console.log(this.state.allRecruiters);
         return(
             <div className='recruiters dashboard'>

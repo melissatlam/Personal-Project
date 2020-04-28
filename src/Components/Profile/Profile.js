@@ -28,11 +28,10 @@ class Profile extends Component {
         this.setState({editView: !this.state.editView})
     }
 
- 
-
     updateUsername = () => {
         const {username} = this.state;
         axios.put(`/api/user/${this.props.user.user_id}`, {username})
+        //
         .then(res => {
             this.props.getUser(res.data[0]);
             this.handleEditView();
@@ -60,13 +59,13 @@ class Profile extends Component {
     render(){
         return (
             <div className='profile'>
-                <h1>Your Profile</h1>
+                <h2>Your Profile</h2>
                 <img 
                     className='profile-picture'
                     src={this.props.user.profile_picture}
                     alt={this.props.user.username}/>
                 {!this.state.editView
-                ? <h2>{this.props.user.username} <button id='edit-button' onClick={this.handleEditView}>Edit</button></h2>
+                ? <h3>{this.props.user.username} <button id='edit-button' onClick={this.handleEditView}>Edit</button></h3>
                 : (<div>
                     <input 
                         value={this.state.username}
@@ -74,7 +73,7 @@ class Profile extends Component {
                         onChange={(e) => this.handleInput(e.target.value)}/>
                     <button id='edit-button' onClick={this.updateUsername}>Submit</button>
                    </div>)}
-                <h2>{this.props.user.email}</h2>
+                <h3>{this.props.user.email}</h3>
                 <div>
                 {/* <button onClick={() => this.deleteUser(user.user_id)}>Delete</button> */}
 

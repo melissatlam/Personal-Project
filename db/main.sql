@@ -29,12 +29,14 @@ create table recruiter_calendars (
     day_available date,
     time_available time,
     recruiter_id integer references recruiters(recruiter_id), 
-    users integer references users(user_id)
+    -- users integer references users(user_id)
 )
 
-create table transactions {
 
-}
+
+
+-- ALTER TABLE recruiter_calendars ADD FOREIGN KEY (recruiter_id) REFERENCES recruiters(recruiter_id)
+-- ALTER TABLE recruiter_calendars ADD FOREIGN KEY (user_id) REFERENCES users(user_id)
 
 
 -- update recruiters set photo = 'https://vignette.wikia.nocookie.net/sonic-pokemon-unipedia/images/1/11/9-1.png/revision/latest?cb=20131031034908' where recruiter_id = 6;

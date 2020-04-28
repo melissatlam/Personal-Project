@@ -27,12 +27,7 @@ module.exports = {
             res.status(200).send(data)
         })
 
-    },
-    getCalendars: (req,res) => {
-        const {id} = req.params,
-              db = req.app.get('db');
-
-        db.recruiters.get_calendars(id)
-    },
+    }
+    
 
 }

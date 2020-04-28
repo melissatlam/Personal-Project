@@ -3,6 +3,7 @@
     background-color: #101092de;
     color: white;
     /* margin-top:0px; */
+    font-family: 'Domine', serif;
     
    
 }
@@ -26,10 +27,19 @@ h1{
 
 .nav-links{
     
-    background-color: #101092de;
-    color: white;
+    background-color: white;
+    color: #101092de;
     
     
     
 
+}
+
+.headerfont{
+    /* font-family: 'Abril Fatface', cursive; */
+    font-family: 'Domine', serif;
+}
+
+.dropdown-menu{
+    
 }

@@ -11,6 +11,7 @@ const express = require('express'),
       recruiterCtrl = require('./controllers/recruiterController'),
       stripeCtrl = require('./controllers/StripeController'),
       userCtrl = require('./controllers/UserController'),
+      calendarCtrl =require('./controllers/calendarController'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       port = SERVER_PORT,
       app = express();
@@ -53,7 +54,9 @@ app.delete('/api/user', userCtrl.deleteUser);
 //recruiter endpoints
 app.post('/api/recruiters', recruiterCtrl.createRecruiters);
 app.get('/api/recruiters', recruiterCtrl.getRecruiters);
-app.get('/api/recruiters/:id', recruiterCtrl.getCalendars);
+
+//calendar endpoint
+app.get('/api/calendar', calendarCtrl.getCalendars);
 
 //stripe endpoints
 app.post('/api/payment', stripeCtrl.completePayments);

@@ -10,6 +10,8 @@ import store from './redux/store';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './App.scss';
+import 'bootstrap';
 
 ReactDOM.render(
   <Provider store={store}>

@@ -6,7 +6,7 @@ insert into recruiters (
     years_experience,
     rate,
     photo
-
+)
 
 values 
 ('Melissa ', 'L', 'Toyota', 'Google & Oracle', 7, '$20/hr', 'https://i.pinimg.com/originals/4d/88/eb/4d88ebc2b8b3a26b8d698ff189f340b3.png'),
