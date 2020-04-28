@@ -26,16 +26,13 @@ module.exports = {
         db.post.delete_post(id)
         .then(() => res.sendStatus(200))
         .catch(err => res.status(500).send(err));
-    },
-    updateUsername: (req, res) => {
-        const {id} = req.params,
-              {username} = req.body
-              db = req.app.get('db');
-        
-        db.users.update_username(username, id)
-        .then(user => res.status(200).send(user))
-        .catch(err => console.log(err));
     }
+    
+    
+
+   
+    
+
 
    
 }

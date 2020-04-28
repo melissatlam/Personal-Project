@@ -9,29 +9,29 @@ import axios from 'axios';
 
 
 class App extends Component {
-    onToken = async(token) => {
-        token.card = void 0;
+    // onToken = async(token) => {
+    //     token.card = void 0;
 
-        await axios.post('/api/payment', {token,amount:100})
-            .then(() => {
-                alert('Payment Submitted')
-            })
-            .catch(err => console.log(err))
+    //     await axios.post('/api/payment', {token,amount:100})
+    //         .then(() => {
+    //             alert('Payment Submitted')
+    //         })
+    //         .catch(err => console.log(err))
             
-    }
+    // }
 
     render(){
         return (
             <div className="App">
                 <Header/>
                  {routes}
-                <StripeCheckout
+                {/* <StripeCheckout
                 label='Proceed to Checkout'
                 token={this.onToken}
                 stripeKey={Stripe.publicKey}
                 amount={100}
                 //billingAddress={true}
-                />
+                /> */}
                 </div>
         );
     }
@@ -39,15 +39,11 @@ class App extends Component {
 
     export default App;
 
-    // function App() {
-//     return (
-//         <div className="App">
-//             <Header/>
-            
-//             {routes}
-            
-//         </div>
-//     )
-// }
 
-// export default App;
+    // <StripeCheckout
+    //             label='Proceed to Checkout'
+    //             token={this.onToken}
+    //             stripeKey={Stripe.publicKey}
+    //             amount={100}
+    //             //billingAddress={true}
+    //             />

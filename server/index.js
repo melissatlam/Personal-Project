@@ -9,6 +9,8 @@ const express = require('express'),
       authCtrl = require('./controllers/authController'),
       mainCtrl = require('./controllers/mainController'),
       recruiterCtrl = require('./controllers/recruiterController'),
+      stripeCtrl = require('./controllers/StripeController'),
+      userCtrl = require('./controllers/UserController'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       port = SERVER_PORT,
       app = express();
@@ -41,15 +43,19 @@ app.get('/auth/logout', authCtrl.logout);
 //post endpoints
 app.post('/api/post', mainCtrl.createPost);
 app.get('/api/posts/:id', mainCtrl.getUserPosts);
-app.delete('/api/post/:id', mainCtrl.deletePost);
+
 
 //user endpoints
-app.put('/api/user/:id', mainCtrl.updateUsername);
+app.get('/api/users', userCtrl.getUsers);
+app.put('/api/user/:id', userCtrl.updateUsername);
+app.delete('/api/user', userCtrl.deleteUser);
 
 //recruiter endpoints
 app.post('/api/recruiters', recruiterCtrl.createRecruiters);
 app.get('/api/recruiters', recruiterCtrl.getRecruiters);
 app.get('/api/recruiters/:id', recruiterCtrl.getCalendars);
 
+//stripe endpoints
+app.post('/api/payment', stripeCtrl.completePayments);
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

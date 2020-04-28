@@ -75,7 +75,7 @@ class Landing extends Component {
         return(
             <div className='landing-container'>
                 <section className='authentication-info'>
-                    <h1>Connect with Recruiters!</h1>
+                    <h2>Connect with Recruiters!</h2>
                     {this.state.registerView
                     ? (<>
                         <h3>Register Below</h3>
@@ -111,12 +111,12 @@ class Landing extends Component {
                             placeholder='Profile image URL'
                             onChange={(e) => this.handleInput(e)}/>
                         <button onClick={this.handleRegister}>Register</button>
-                        <p>Have an account? <span onClick={this.handleToggle}>Login Here</span></p>
+                        <p>Have an account? <span onClick={this.handleToggle}>Login </span></p>
                        </>)
                     : (<>
                         <button onClick={this.handleLogin}>Login</button>
                        
-                        <p>Don't have an account? <span onClick={this.handleToggle}>Register Here</span></p>
+                        <p>New to Recruiter Rumble? <span onClick={this.handleToggle}>Join Here!</span></p>
                        </>)}
                 </section>
             </div>
