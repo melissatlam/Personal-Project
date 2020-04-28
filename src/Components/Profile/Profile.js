@@ -75,7 +75,7 @@ class Profile extends Component {
                    </div>)}
                 <h3>{this.props.user.email}</h3>
                 <div>
-                {/* <button onClick={() => this.deleteUser(user.user_id)}>Delete</button> */}
+                {/* <button onClick={() => this.deleteUser(users.user_id)}>Delete</button> */}
 
                 </div>
                 {/* <button onClick={this.handleLogout}>Logout</button>  */}

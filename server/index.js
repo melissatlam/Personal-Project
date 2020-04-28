@@ -42,8 +42,8 @@ app.post('/auth/login', authCtrl.login);
 app.get('/auth/logout', authCtrl.logout);
 
 //post endpoints
-app.post('/api/post', mainCtrl.createPost);
-app.get('/api/posts/:id', mainCtrl.getUserPosts);
+// app.post('/api/post', mainCtrl.createPost);
+// app.get('/api/posts/:id', mainCtrl.getUserPosts);
 
 
 //user endpoints
