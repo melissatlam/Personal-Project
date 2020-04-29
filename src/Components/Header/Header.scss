@@ -1,6 +1,8 @@
+@import '../../variables';
+
 .header-container {
     height: 125px;
-    background-color: #101092de;
+    background-color: $primary-header-color;
     color: white;
     /* margin-top:0px; */
     font-family: 'Domine', serif;

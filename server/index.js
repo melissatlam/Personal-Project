@@ -7,11 +7,15 @@ const express = require('express'),
       massive = require('massive'),
       session = require('express-session'),
       authCtrl = require('./controllers/authController'),
-      mainCtrl = require('./controllers/mainController'),
+    //   mainCtrl = require('./controllers/mainController'),
       recruiterCtrl = require('./controllers/recruiterController'),
       stripeCtrl = require('./controllers/StripeController'),
       userCtrl = require('./controllers/UserController'),
       calendarCtrl =require('./controllers/calendarController'),
+      feedbackCtrl=require('./controllers/feedbackController'),
+    //   app = require('express')(),
+    //   http = require('http').createServer(app),
+    //   io = require('socket.io'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       port = SERVER_PORT,
       app = express();
@@ -49,7 +53,7 @@ app.get('/auth/logout', authCtrl.logout);
 //user endpoints
 app.get('/api/users', userCtrl.getUsers);
 app.put('/api/user/:id', userCtrl.updateUsername);
-app.delete('/api/user', userCtrl.deleteUser);
+app.delete('/api/user/:id', userCtrl.deleteUser);
 
 //recruiter endpoints
 app.post('/api/recruiters', recruiterCtrl.createRecruiters);
@@ -58,7 +62,23 @@ app.get('/api/recruiters', recruiterCtrl.getRecruiters);
 //calendar endpoint
 app.get('/api/calendar', calendarCtrl.getCalendars);
 
+//feedback endpoint
+app.get('/api/feedback', feedbackCtrl.getFeedback);
+
+
 //stripe endpoints
 app.post('/api/payment', stripeCtrl.completePayments);
+
+//socketio
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/index.html');
+//   });
+// io.on('connection', (socket) => {
+//     console.log('a user connected');
+//   });
+  
+//   http.listen(4444, () => {
+//     console.log('listening on *:3000');
+//   });
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

@@ -11,7 +11,7 @@ export default (
     <Switch>
         <Route exact path='/' component={Landing} />
         <Route path='/dash' component={Dashboard} />
-        <Route path='/interviews' component={Interviews} />
+        {/* <Route path='/interviews' component={Interviews} /> */}
         <Route path='/profile' component={Profile} />
         <Route path='/feedback' component={Feedback} />
         <Route path='/logout' component={Logout} />

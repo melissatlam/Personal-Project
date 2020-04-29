@@ -3,13 +3,15 @@ import './Profile.css';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {getUser, clearUser} from '../../redux/reducer';
+import {Link} from 'react-router-dom';
 
 class Profile extends Component {
     constructor(props){
         super(props);
         this.state = {
             username: '',
-            editView: false
+            editView: false,
+            
         }
     }
 
@@ -41,14 +43,14 @@ class Profile extends Component {
     }
 
     getUsers = () => {
-        axios.get(`/api/users/${this.props.users.user_id}`)
+        axios.get(`/api/users/${this.props.user.user_id}`)
         .then(res => this.setState({users: res.data}))
         .catch(err => console.log(err));
     }
 
 
     deleteUser = (id) => {
-        axios.delete(`/api/user/${this.props.user.user_id}`)
+        axios.delete(`/api/user/${id}`)
         .then(() => {
             this.getUsers();
         })
@@ -57,10 +59,11 @@ class Profile extends Component {
 
 
     render(){
+        console.log(this.props.user.user_id);
         return (
             <div className='profile'>
                 <h2>Your Profile</h2>
-                <img 
+                <img width ='200'
                     className='profile-picture'
                     src={this.props.user.profile_picture}
                     alt={this.props.user.username}/>
@@ -75,7 +78,7 @@ class Profile extends Component {
                    </div>)}
                 <h3>{this.props.user.email}</h3>
                 <div>
-                {/* <button onClick={() => this.deleteUser(users.user_id)}>Delete</button> */}
+                <button onClick={() => this.deleteUser(this.props.user.user_id)}>Delete</button>
 
                 </div>
                 {/* <button onClick={this.handleLogout}>Logout</button>  */}

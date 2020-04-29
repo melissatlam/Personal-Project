@@ -32,7 +32,13 @@ create table recruiter_calendars (
     -- users integer references users(user_id)
 )
 
-
+create table feedback (
+    feedback_id serial primary key,
+    firstname varchar(50),
+    lastname varchar(50),
+    interview_date varchar(50),
+    notes varchar(1500)
+)
 
 
 -- ALTER TABLE recruiter_calendars ADD FOREIGN KEY (recruiter_id) REFERENCES recruiters(recruiter_id)

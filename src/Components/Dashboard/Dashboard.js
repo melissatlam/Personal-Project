@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import './Dashboard.css';
+import './Dashboard.scss';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 import Stripe from '../Stripe/Stripe';
