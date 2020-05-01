@@ -1,9 +1,11 @@
 .App {
   text-align: center;
+  
 }
 
-h2 {
-  font-family: 'Domine', serif;
+h2, h3 {
+  font-family: 'Libre Caslon Text', serif;
+
 }
 /* .App-logo {
   height: 40vmin;

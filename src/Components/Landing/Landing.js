@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Landing.css';
+import './Landing.scss';
 import axios from 'axios';
 //connect needs to be brought into components that are subscribing to values from 
 //redux.
@@ -75,46 +75,46 @@ class Landing extends Component {
         return(
             <div className='landing-container'>
                 <section className='authentication-info'>
-                    <h2>Connect with Recruiters!</h2>
+                    <h3 >Connect with Recruiters!</h3>
                     {this.state.registerView
                     ? (<>
-                        <h3>Register Below</h3>
-                        <input 
+                        <p>Register Below</p>
+                        <div className ='register'><input 
                             value={this.state.username}
                             name='username'
                             placeholder='Username'
-                            onChange={(e) => this.handleInput(e)}/>
+                            onChange={(e) => this.handleInput(e)}/></div>
                        </>)
-                    : <h3>Login Below</h3>}
-                    <input 
+                    : <p>Login Below</p>}
+                    <div className ='register'><input 
                         value={this.state.email}
                         name='email'
                         placeholder='Email'
-                        onChange={(e) => this.handleInput(e)}/>
-                    <input 
+                        onChange={(e) => this.handleInput(e)}/></div>
+                    <div className ='register'><input 
                         type='password'
                         value={this.state.password}
                         name='password'
                         placeholder='Password'
-                        onChange={(e) => this.handleInput(e)}/>
+                        onChange={(e) => this.handleInput(e)}/></div>
                     {this.state.registerView
                     ? (<>
-                        <input 
+                        <div className ='register'><input 
                             type='password'
                             value={this.state.verPassword}
                             name='verPassword'
                             placeholder='Verify Password'
-                            onChange={(e) => this.handleInput(e)}/>
-                        <input
+                            onChange={(e) => this.handleInput(e)}/></div>
+                        <div className ='register'><input 
                             value={this.state.picture}
                             name='picture'
                             placeholder='Profile image URL'
-                            onChange={(e) => this.handleInput(e)}/>
-                        <button onClick={this.handleRegister}>Register</button>
+                            onChange={(e) => this.handleInput(e)}/></div>
+                        <div className ='register'><button onClick={this.handleRegister}>Register</button></div>
                         <p>Have an account? <span onClick={this.handleToggle}>Login </span></p>
                        </>)
                     : (<>
-                        <button onClick={this.handleLogin}>Login</button>
+                        <div className ='register'><button onClick={this.handleLogin}>Login</button></div>
                        
                         <p>New to Recruiter Rumble? <span onClick={this.handleToggle}>Join Here!</span></p>
                        </>)}

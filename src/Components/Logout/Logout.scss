@@ -1,0 +1,6 @@
+@import '../../variables';
+
+.profile, .bye{
+    font-family: $libre;
+    @include spacing;
+}

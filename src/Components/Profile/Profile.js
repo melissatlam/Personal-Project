@@ -3,7 +3,7 @@ import './Profile.css';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {getUser, clearUser} from '../../redux/reducer';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 class Profile extends Component {
     constructor(props){
@@ -52,7 +52,10 @@ class Profile extends Component {
     deleteUser = (id) => {
         axios.delete(`/api/user/${id}`)
         .then(() => {
-            this.getUsers();
+            // this.getUsers();
+            this.props.clearUser();
+            this.props.history.push('/');
+
         })
         .catch(err => console.log(err))
     }

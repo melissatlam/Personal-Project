@@ -1,7 +1,31 @@
 $primary-header-color: #101092de;
-$primary-body-color:#f3f3f5c5;
+$primary-body-color:#ffffff;
+$primary-background-color:#555353af;
 
-//@mixin flex-container{
-    // display:flex;
-    // justify-content:center;
-    // align-items:center;
+@mixin flex-container{
+    display: flex;
+   flex-direction: row;
+   justify-content: center;
+
+}
+
+
+@mixin spacing{
+    padding:10px;
+    margin:10px;
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&display=swap);
+$libre: 'Libre Caslon Text', serif;
+
+%login-text{
+color: #101092de;
+font-size: 19px;
+}
+%recruiter-text{
+    color: #000000;
+    font-size: 18px;
+    // font-family: $libre;
+    
+ }
+

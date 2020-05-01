@@ -3,45 +3,51 @@
 .header-container {
     height: 125px;
     background-color: $primary-header-color;
-    color: white;
-    /* margin-top:0px; */
-    font-family: 'Domine', serif;
-    
+    color:$primary-body-color;
+    font-family: $libre;
+   
+    @include flex-container;
+// @include google-font("Domine Serif");
    
 }
 
 h1{
-    display: flex;
-   flex-direction: row;
-   justify-content: flex-start;
+
    padding-left:20px;
    padding-top:35px;
    margin-top:0px;
    
 }
 .flex {
-    display: flex;
-   flex-direction: row;
-   justify-content: flex-end;
+
    box-sizing: border-box;
    padding-right:20px;
 }
 
 .nav-links{
     
-    background-color: white;
+    background-color: $primary-body-color;
     color: #101092de;
-    
-    
     
 
 }
 
 .headerfont{
-    /* font-family: 'Abril Fatface', cursive; */
-    font-family: 'Domine', serif;
+    // /* font-family: 'Abril Fatface', cursive; */
+    font-family: 
+    $libre;
+    // 'Domine', serif;
+    // @include flex-container;
+//     display: flex;
+//    flex-direction: row;
+//    justify-content: center;
 }
 
-.dropdown-menu{
-    
+.dropdown-toggle{
+    background-color: $primary-body-color ;
+    opacity: .7;
+    color: $primary-header-color;
+    border:0px;
+    font-family: 'Domine', serif;
+
 }

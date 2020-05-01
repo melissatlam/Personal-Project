@@ -1,5 +1,48 @@
-/* .recruiters{
-    width:100px;
+@import '../../variables';
 
-   
-} */
+.flex-box{
+    @include flex-container;
+    @include spacing;
+    // @include boxes;
+    background-color: $primary-body-color;
+     
+}
+
+.recruiters-dashboard{
+    // padding: 20px;
+    // margin:20px;
+    // @include spacing;
+    background-color: $primary-header-color;
+    color:$primary-body-color;
+
+    
+}
+
+.stripe{
+    @include spacing;
+    
+}
+
+.name{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: $libre;
+    
+    // 'Libre Caslon Text', serif;
+}
+
+.box2{
+    @extend %recruiter-text;
+}
+
+// .subheader{
+//     background-color: $primary-body-color;
+//     color:$primary-header-color;
+//     @include spacing;
+    
+// }
+// .box1, .box2{
+//     @include spacing;
+//     width: 800px;
+// }
+

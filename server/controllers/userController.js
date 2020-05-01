@@ -14,7 +14,10 @@ deleteUser: (req, res) => {
           db = req.app.get('db');
 
     db.users.delete_user(id)
-    .then(() => res.sendStatus(200))
+    .then(() => {
+        req.session.destroy();
+        res.sendStatus(200)
+    })
     .catch(err => res.status(500).send(err));
 },
 updateUsername: (req, res) => {

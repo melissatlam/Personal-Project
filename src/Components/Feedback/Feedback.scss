@@ -1,0 +1,15 @@
+@import '../../variables';
+
+
+.flex-box2{
+    @include flex-container;
+    @include spacing;
+    @extend %recruiter-text;
+
+    
+}
+
+.box3,.box4,h2,.feedback-dashboard{
+    @include spacing;
+}
+

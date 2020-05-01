@@ -1,0 +1,21 @@
+@import '../../variables';
+
+.landing-container{
+    font-family: 
+    // $libre;
+    'Domine', serif;
+    @include flex-container;
+    // @include google-font("Domine Serif");
+    
+
+}
+
+.register, h3{
+    @include spacing;
+}
+
+p{
+    @extend %login-text;
+}
+
+
