@@ -18,4 +18,11 @@ p{
     @extend %login-text;
 }
 
+.button{
+    @include button;
+}
 
+.button:hover{
+    background-color: rgba(179, 177, 177, 0.76);
+    color:#101092de;
+}

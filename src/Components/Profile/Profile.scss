@@ -1,8 +1,7 @@
 @import '../../variables';
 
-.profile, .bye{
+.profile {
     font-family: $libre;
-    @include spacing;
 }
 
 .button{

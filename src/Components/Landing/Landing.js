@@ -110,11 +110,11 @@ class Landing extends Component {
                             name='picture'
                             placeholder='Profile image URL'
                             onChange={(e) => this.handleInput(e)}/></div>
-                        <div className ='register'><button onClick={this.handleRegister}>Register</button></div>
+                        <div className ='register'><button className='button' onClick={this.handleRegister}>Register</button></div>
                         <p>Have an account? <span onClick={this.handleToggle}>Login </span></p>
                        </>)
                     : (<>
-                        <div className ='register'><button onClick={this.handleLogin}>Login</button></div>
+                        <div className ='register'><button className='button' onClick={this.handleLogin}>Login</button></div>
                        
                         <p>New to Recruiter Rumble? <span onClick={this.handleToggle}>Join Here!</span></p>
                        </>)}

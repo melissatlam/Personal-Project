@@ -5,15 +5,18 @@
     @include spacing;
     // @include boxes;
     background-color: $primary-body-color;
+    margin-top:0px;
+    border-radius: 6px;
+    
      
 }
 
 .recruiters-dashboard{
-    // padding: 20px;
+    padding: 20px;
     // margin:20px;
     // @include spacing;
     background-color: $primary-header-color;
-    color:$primary-body-color;
+    // color:$primary-body-color;
 
     
 }
@@ -35,14 +38,5 @@
     @extend %recruiter-text;
 }
 
-// .subheader{
-//     background-color: $primary-body-color;
-//     color:$primary-header-color;
-//     @include spacing;
-    
-// }
-// .box1, .box2{
-//     @include spacing;
-//     width: 800px;
-// }
+
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Profile.css';
+import './Profile.scss';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {getUser, clearUser} from '../../redux/reducer';
@@ -65,23 +65,23 @@ class Profile extends Component {
         console.log(this.props.user.user_id);
         return (
             <div className='profile'>
-                <h2>Your Profile</h2>
+                <h3>Your Profile</h3>
                 <img width ='200'
                     className='profile-picture'
                     src={this.props.user.profile_picture}
                     alt={this.props.user.username}/>
                 {!this.state.editView
-                ? <h3>{this.props.user.username} <button id='edit-button' onClick={this.handleEditView}>Edit</button></h3>
+                ? <h3><div>{this.props.user.username}</div> <div><button className='button' onClick={this.handleEditView}>Edit</button></div> </h3>
                 : (<div>
                     <input 
                         value={this.state.username}
                         placeholder='New Username'
                         onChange={(e) => this.handleInput(e.target.value)}/>
-                    <button id='edit-button' onClick={this.updateUsername}>Submit</button>
+                    <button className='button' onClick={this.updateUsername}>Submit</button>
                    </div>)}
                 <h3>{this.props.user.email}</h3>
                 <div>
-                <button onClick={() => this.deleteUser(this.props.user.user_id)}>Delete</button>
+                <button className='button' onClick={() => this.deleteUser(this.props.user.user_id)}>Delete</button>
 
                 </div>
                 {/* <button onClick={this.handleLogout}>Logout</button>  */}
@@ -93,3 +93,4 @@ class Profile extends Component {
 const mapStateToProps = reduxState => reduxState;
 
 export default connect(mapStateToProps, {getUser, clearUser})(Profile);
+//button id='edit-button'

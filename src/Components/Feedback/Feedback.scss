@@ -5,11 +5,29 @@
     @include flex-container;
     @include spacing;
     @extend %recruiter-text;
+    background-color: $primary-body-color;
+    // margin-top:0px;
+    border-radius: 6px;
 
     
 }
 
-.box3,.box4,h2,.feedback-dashboard{
-    @include spacing;
+.box3{
+    padding:40px;
+}
+.box4{
+    padding-right:40px;
+}
+
+.feedback-dashboard{
+    background-color: $primary-header-color;
+    padding:20px;
+    margin-bottom:0px;
+    color:$primary-body-color;
+}
+
+.recruiter-title{
+    font-family: $libre;
+    font-size:25px;
 }
 

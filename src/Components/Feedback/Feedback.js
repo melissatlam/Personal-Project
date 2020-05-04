@@ -44,7 +44,7 @@ class Feedback extends Component {
             <div className='feedback-dashboard'>
                 
                 <div>
-                    <h2>Recruiter Responses</h2>
+                    <div className='recruiter-title'>Recruiter Responses</div>
                     {mappedFeedback}
                     
                 </div>

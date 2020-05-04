@@ -75,12 +75,13 @@ class Dashboard extends Component {
             <div className='recruiters-dashboard'>
                 
                 <div>
-                    <div className ='subheader'>
+                    {/* <div className ='subheader'>
                     <div >Recruiters Available for:</div>
                     <div >Mock Interviews</div>
-                    <div >Resume Review</div></div>
-                    <div>
-                    {mappedRecruiters}</div>
+                    <div >Resume Review</div></div> */}
+                    {/* <div> */}
+                    {mappedRecruiters}
+                    {/* </div> */}
                     
                 </div>
             </div>
