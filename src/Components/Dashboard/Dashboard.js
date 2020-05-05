@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import './Dashboard.scss';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
-import Stripe from '../Stripe/Stripe';
+// import Stripe from '../Stripe/Stripe';
 
 
 
@@ -52,7 +52,8 @@ class Dashboard extends Component {
                    <div className='stripe'><StripeCheckout
                     label='Proceed to Checkout'
                     token={this.onToken}
-                    stripeKey={Stripe.publicKey}
+                    stripeKey='pk_test_VkAyEIoo6HSG5Jbd0PeYskOw00IJj7nyK2'
+                    // stripeKey={Stripe.publicKey}
                     amount={2000}
                         //billingAddress={true}
                     /></div></div>

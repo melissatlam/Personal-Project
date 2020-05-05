@@ -6,6 +6,7 @@ require('dotenv').config();
 const express = require('express'),
       massive = require('massive'),
       session = require('express-session'),
+      path = require('path'),
       authCtrl = require('./controllers/authController'),
     //   mainCtrl = require('./controllers/mainController'),
       recruiterCtrl = require('./controllers/recruiterController'),
@@ -69,16 +70,11 @@ app.get('/api/feedback', feedbackCtrl.getFeedback);
 //stripe endpoints
 app.post('/api/payment', stripeCtrl.completePayments);
 
-//socketio
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/index.html');
-//   });
-// io.on('connection', (socket) => {
-//     console.log('a user connected');
-//   });
-  
-//   http.listen(4444, () => {
-//     console.log('listening on *:3000');
-//   });
+//hosting
+app.use(express.static(__dirname +'/../build'))
+app.get('*', (req,res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html' ))
+})
+
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
