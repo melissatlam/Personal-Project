@@ -3,7 +3,7 @@ import Header from './Components/Header/Header';
 import routes from './routes';
 import './App.css';
 import axios from 'axios';
-import './App.scss';
+// import './App.scss';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

@@ -62,7 +62,10 @@ class Dashboard extends Component {
                    <ul> Experience: {recruiters.years_experience} years</ul>
                    <ul>Current Employer: {recruiters.current_employer}</ul>
                    <ul> Previous Employers: {recruiters.previous_employers}</ul>
-                   <div>Availability: {recruiters.day_available} at {recruiters.time_available}</div>
+                
+                   <ul>Availability: {recruiters.day_available} at {recruiters.time_available}</ul>
+                   <ul>Rate: $20/hr</ul>
+                   
                    </div>
                    </div>
             

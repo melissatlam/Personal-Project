@@ -5,6 +5,12 @@ import {connect} from 'react-redux';
 import {getUser, clearUser} from '../../redux/reducer';
 
 class Logout extends Component {
+
+    componentDidMount(){
+        if(!this.props.user.email){
+            this.props.history.push('/');
+        }
+    }
     
     handleLogout = () => {
         axios.get('/auth/logout')

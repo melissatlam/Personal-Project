@@ -5,10 +5,23 @@
     // $libre;
     'Domine', serif;
     @include flex-container;
-    // @include google-font("Domine Serif");
+    background-color:$primary-header-color;
+    
+    
     
 
 }
+
+.authentication-info{
+    width:400px;
+    height:600px;
+    background-color: $primary-body-color;
+    opacity:.9;
+    border-radius: 10px;
+    margin-bottom:300px;
+    
+}
+
 
 .register, h3{
     @include spacing;

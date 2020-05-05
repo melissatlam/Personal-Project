@@ -2,7 +2,11 @@
 
 .profile {
     font-family: $libre;
+    // background-color:$primary-header-color;
+    // width: 400px;
 }
+
+
 
 .button{
     @include button;
@@ -10,5 +14,5 @@
 
 .button:hover{
     background-color: rgba(179, 177, 177, 0.76);
-    color:#101092de;
+    color:$primary-header-color;
 }

@@ -14,12 +14,13 @@ $primary-background-color:#555353af;
     width:100px;
     font-family: $libre;
     border:1px solid;
-    border-color: #101092de;
-    color:#101092de;
+    border-color: $primary-header-color;
+    color:$primary-header-color;
     // background-color: rgb(203, 199, 199);
     transition-duration: 0.4s;
     font-size: 15px;
     align-items: center;
+    border-radius: 6px;
     
 }
 
