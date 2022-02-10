@@ -22,7 +22,7 @@
     "include-media": "^1.4.9",
     "jquery": "^3.5.0",
     "massive": "^6.3.0",
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-bootstrap-dropdown-menu": "^1.1.15",
     "react-dom": "^16.13.1",
